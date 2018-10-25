@@ -35,10 +35,22 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Db2AzureSearch\Db2AzureSearchCommand.cs" />
+    <Compile Include="Db2AzureSearch\Db2AzureSearchConfiguration.cs" />
+    <Compile Include="Db2AzureSearch\EntitiesContextFactory.cs" />
+    <Compile Include="Db2AzureSearch\EnumerableExtensions.cs" />
+    <Compile Include="Db2AzureSearch\IDb2AzureSearchCommand.cs" />
+    <Compile Include="Db2AzureSearch\IEntitiesContextFactory.cs" />
+    <Compile Include="Db2AzureSearch\IIndexActionBuilder.cs" />
+    <Compile Include="Db2AzureSearch\INewPackageRegistrationProducer.cs" />
+    <Compile Include="Db2AzureSearch\NewPackageRegistration.cs" />
+    <Compile Include="Db2AzureSearch\IndexActionBuilder.cs" />
+    <Compile Include="Db2AzureSearch\NewPackageRegistrationProducer.cs" />
+    <Compile Include="Db2AzureSearch\SearchAndHijackIndexActions.cs" />
+    <Compile Include="Models\HijackDocument.cs" />
     <Compile Include="Models\IBaseMetadataDocument.cs" />
     <Compile Include="Models\KeyedDocument.cs" />
     <Compile Include="Models\BaseMetadataDocument.cs" />
-    <Compile Include="Models\HijackDocument.cs" />
     <Compile Include="Models\IKeyedDocument.cs" />
     <Compile Include="Models\SearchDocument.cs" />
     <Compile Include="VersionList\Guard.cs" />
@@ -81,6 +93,16 @@
     <PackageReference Include="NuGetGallery.Core">
       <Version>4.4.4-dev-41931</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catalog\NuGet.Services.Metadata.Catalog.csproj">
+      <Project>{e97f23b8-ecb0-4afa-b00c-015c39395fef}</Project>
+      <Name>NuGet.Services.Metadata.Catalog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NuGet.Indexing\NuGet.Indexing.csproj">
+      <Project>{DDB34145-870F-42C3-9663-A9390CEE1E35}</Project>
+      <Name>NuGet.Indexing</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
